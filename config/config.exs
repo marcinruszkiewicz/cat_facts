@@ -1,11 +1,5 @@
 import Config
 
-config :cat_facts, CatFacts.Repo,
-  database: "cat_facts_dev",
-  username: "skyace",
-  password: "",
-  hostname: "localhost"
-
 config :cat_facts, ecto_repos: [CatFacts.Repo]
 
 config :nostrum,
@@ -14,3 +8,7 @@ config :nostrum,
 
 config :logger, :console,
   metadata: [:shard, :guild, :channel]
+
+# Import environment specific config. This must remain at the bottom
+# of this file so it overrides the configuration defined above.
+import_config "#{config_env()}.exs"

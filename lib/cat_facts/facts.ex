@@ -14,6 +14,15 @@ defmodule CatFacts.Facts do
     Repo.one(query)
   end
 
+  @doc """
+  Creates a fact for the specified Discord guild.
+
+  ## Examples
+
+      iex> CatFacts.Facts.create_guild_fact(12345, "my cool fact")
+      {:ok, %CatFacts.Facts.Fact{} }
+
+  """
   def create_guild_fact(guild_id, content) do
     %Fact{}
     |> Fact.changeset(%{guild_id: guild_id, content: content})
