@@ -1,5 +1,4 @@
 defmodule CatFacts.FactsTest do
-  use ExUnit.Case
-  doctest CatFacts.Facts
-
+  use CatFacts.DataCase
+  doctest CatFacts.Facts, import: true
 end

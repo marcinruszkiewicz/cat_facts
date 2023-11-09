@@ -6,6 +6,7 @@ defmodule CatFacts.MixProject do
       app: :cat_facts,
       version: "0.1.0",
       elixir: "~> 1.15",
+      elixirc_paths: elixirc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       test_coverage: [tool: ExCoveralls],
@@ -26,7 +27,7 @@ defmodule CatFacts.MixProject do
     ]
   end
 
-  defp elixirc_paths(:test), do: ["lib", "test/support"]
+  defp elixirc_paths(:test), do: ["lib", "test/support", "test/factories"]
   defp elixirc_paths(_), do: ["lib"]
 
   # Run "mix help deps" to learn about dependencies.
@@ -35,9 +36,10 @@ defmodule CatFacts.MixProject do
       {:nostrum, git: "https://github.com/Kraigie/nostrum.git"},
       {:ecto_sql, "~> 3.10"},
       {:postgrex, ">= 0.0.0"},
+      {:ex_machina, "~> 2.7.0", only: :test},
       {:faker, "~> 0.16", only: :test},
       {:excoveralls, "~> 0.10", only: :test},
-      {:mock, "~> 0.3", only: :test}
+      {:patch, "~> 0.13", only: :test}
     ]
   end
 end
