@@ -9,6 +9,6 @@ The best learning projects should be practical ones, so with that in mind - let'
 You can read the blogposts here:
 
 - https://polcode.com/resources/blog/elixir-for-rubyists-cat-facts-in-discord-part-1/
-- part 2
-- part 3
+- https://polcode.com/resources/blog/elixir-for-rubyists-cat-facts-in-discord-part-2/
+- https://polcode.com/resources/blog/elixir-for-rubyists-cat-facts-in-discord-part-3/
 
